@@ -1,0 +1,12 @@
+server:
+  port: 8585
+spring:
+  cloud:
+    gateway:
+      routes:
+      - uri: http://localhost:8085/
+        predicates:
+        - Path=/api/v1/**
+      - uri: http://localhost:8084/
+        predicates:
+        - Path=/api/v2/**
